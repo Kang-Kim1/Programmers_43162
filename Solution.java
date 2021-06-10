@@ -11,6 +11,7 @@ class Solution {
         
         for(int i = 0; i < N; i++) {
             for(int j = 0; j < M; j++) {
+                // if connected && not visited
                 if(computers[i][j] == 1 && visited[i][j] == 0) {
                     int[] tempArr = {i, j};
                     queue.offer(tempArr);
@@ -22,7 +23,7 @@ class Solution {
                     int k = curr[0];
 
                     for(int l = 0; l < M; l++) {
-                   
+                        // if connected to each other && not visited
                         if(computers[k][l] + computers[l][k] == 2 && visited[l][k] == 0) {
                         	visited[k][l] = 1;
                         	visited[l][k] = 1;
